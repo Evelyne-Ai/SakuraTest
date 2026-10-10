@@ -1,0 +1,397 @@
+{
+  "categories": [
+    {
+      "id": "downloader",
+      "name": "Downloader",
+      "description": "Unduh media dari sumber yang didukung."
+    },
+    {
+      "id": "ai",
+      "name": "AI Tools",
+      "description": "Alat berbasis model AI."
+    },
+    {
+      "id": "image",
+      "name": "Image Tools",
+      "description": "Pengolah gambar."
+    },
+    {
+      "id": "video",
+      "name": "Video Tools",
+      "description": "Pengolah video."
+    },
+    {
+      "id": "search",
+      "name": "Search Tools",
+      "description": "Pencarian dan lookup."
+    },
+    {
+      "id": "developer",
+      "name": "Developer Tools",
+      "description": "Utilitas untuk developer."
+    },
+    {
+      "id": "text",
+      "name": "Text Utilities",
+      "description": "Pengolah teks."
+    },
+    {
+      "id": "file",
+      "name": "File Utilities",
+      "description": "Utilitas file."
+    },
+    {
+      "id": "other",
+      "name": "Other Utilities",
+      "description": "Utilitas lainnya."
+    }
+  ],
+  "tools": [
+    {
+      "slug": "base64",
+      "name": "Base64 Encoder/Decoder",
+      "category": "developer",
+      "icon": "binary",
+      "implemented": true,
+      "description": "Encode teks ke Base64 atau decode kembali ke teks UTF-8.",
+      "fields": [
+        {
+          "name": "mode",
+          "label": "Mode",
+          "type": "select",
+          "options": [
+            "encode",
+            "decode"
+          ],
+          "default": "encode"
+        },
+        {
+          "name": "text",
+          "label": "Teks",
+          "type": "textarea",
+          "required": true,
+          "max": 100000
+        }
+      ]
+    },
+    {
+      "slug": "hash",
+      "name": "Hash Generator",
+      "category": "developer",
+      "icon": "fingerprint",
+      "implemented": true,
+      "description": "Hitung hash SHA-1, SHA-256, SHA-384, atau SHA-512 dari teks.",
+      "fields": [
+        {
+          "name": "algorithm",
+          "label": "Algoritma",
+          "type": "select",
+          "options": [
+            "sha1",
+            "sha256",
+            "sha384",
+            "sha512"
+          ],
+          "default": "sha256"
+        },
+        {
+          "name": "text",
+          "label": "Teks",
+          "type": "textarea",
+          "required": true,
+          "max": 100000
+        }
+      ]
+    },
+    {
+      "slug": "json-formatter",
+      "name": "JSON Formatter",
+      "category": "developer",
+      "icon": "braces",
+      "implemented": true,
+      "description": "Validasi, format (pretty), atau minify JSON.",
+      "fields": [
+        {
+          "name": "mode",
+          "label": "Mode",
+          "type": "select",
+          "options": [
+            "format",
+            "minify"
+          ],
+          "default": "format"
+        },
+        {
+          "name": "text",
+          "label": "JSON",
+          "type": "textarea",
+          "required": true,
+          "max": 200000
+        }
+      ]
+    },
+    {
+      "slug": "uuid",
+      "name": "UUID Generator",
+      "category": "developer",
+      "icon": "key-round",
+      "implemented": true,
+      "description": "Buat UUID v4 acak secara kriptografis.",
+      "fields": [
+        {
+          "name": "count",
+          "label": "Jumlah (1-50)",
+          "type": "number",
+          "default": 5,
+          "min": 1,
+          "max": 50
+        }
+      ]
+    },
+    {
+      "slug": "url-codec",
+      "name": "URL Encoder/Decoder",
+      "category": "developer",
+      "icon": "link",
+      "implemented": true,
+      "description": "Encode atau decode komponen URL (percent-encoding).",
+      "fields": [
+        {
+          "name": "mode",
+          "label": "Mode",
+          "type": "select",
+          "options": [
+            "encode",
+            "decode"
+          ],
+          "default": "encode"
+        },
+        {
+          "name": "text",
+          "label": "Teks",
+          "type": "textarea",
+          "required": true,
+          "max": 50000
+        }
+      ]
+    },
+    {
+      "slug": "slugify",
+      "name": "Slug Generator",
+      "category": "text",
+      "icon": "text-cursor",
+      "implemented": true,
+      "description": "Ubah judul menjadi slug URL yang bersih.",
+      "fields": [
+        {
+          "name": "text",
+          "label": "Judul",
+          "type": "text",
+          "required": true,
+          "max": 500
+        }
+      ]
+    },
+    {
+      "slug": "text-stats",
+      "name": "Text Statistics",
+      "category": "text",
+      "icon": "file-text",
+      "implemented": true,
+      "description": "Hitung karakter, kata, kalimat, baris, dan perkiraan waktu baca.",
+      "fields": [
+        {
+          "name": "text",
+          "label": "Teks",
+          "type": "textarea",
+          "required": true,
+          "max": 200000
+        }
+      ]
+    },
+    {
+      "slug": "case-converter",
+      "name": "Case Converter",
+      "category": "text",
+      "icon": "case-sensitive",
+      "implemented": true,
+      "description": "Ubah teks ke UPPER, lower, Title, camelCase, snake_case, atau kebab-case.",
+      "fields": [
+        {
+          "name": "mode",
+          "label": "Format",
+          "type": "select",
+          "options": [
+            "upper",
+            "lower",
+            "title",
+            "camel",
+            "snake",
+            "kebab"
+          ],
+          "default": "title"
+        },
+        {
+          "name": "text",
+          "label": "Teks",
+          "type": "textarea",
+          "required": true,
+          "max": 50000
+        }
+      ]
+    },
+    {
+      "slug": "password-generator",
+      "name": "Password Generator",
+      "category": "other",
+      "icon": "lock",
+      "implemented": true,
+      "description": "Buat password acak kuat memakai generator kriptografis. Tidak disimpan.",
+      "fields": [
+        {
+          "name": "length",
+          "label": "Panjang (8-128)",
+          "type": "number",
+          "default": 20,
+          "min": 8,
+          "max": 128
+        },
+        {
+          "name": "symbols",
+          "label": "Sertakan simbol",
+          "type": "select",
+          "options": [
+            "yes",
+            "no"
+          ],
+          "default": "yes"
+        }
+      ]
+    },
+    {
+      "slug": "media-downloader",
+      "name": "Media Downloader",
+      "category": "downloader",
+      "icon": "download",
+      "implemented": false,
+      "requires": "DOWNLOADER_PROVIDER_URL",
+      "description": "Unduh media dari URL. Membutuhkan provider/layanan eksternal yang dikonfigurasi dan mematuhi hak cipta serta ToS sumber.",
+      "fields": []
+    },
+    {
+      "slug": "ai-assistant",
+      "name": "AI Assistant",
+      "category": "ai",
+      "icon": "sparkles",
+      "implemented": false,
+      "requires": "AI_PROVIDER_API_KEY",
+      "description": "Asisten AI. Membutuhkan API key penyedia model yang disimpan di server.",
+      "fields": []
+    },
+    {
+      "slug": "image-compressor",
+      "name": "Image Compressor",
+      "category": "image",
+      "icon": "image",
+      "implemented": false,
+      "requires": "IMAGE_PIPELINE (belum dibuat)",
+      "description": "Kompres gambar. Belum diimplementasikan di versi ini.",
+      "fields": []
+    }
+  ],
+  "docs": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "body": "SakuraApis adalah REST API JSON. Daftar akun, buat API key di Dashboard, lalu panggil endpoint dengan header X-API-Key. Semua endpoint berada di bawah prefix /api."
+    },
+    {
+      "id": "authentication",
+      "title": "Authentication",
+      "body": "Kirim API key lewat header X-API-Key (atau Authorization: Bearer sk_sakura_...). Key hanya tampil sekali saat dibuat dan disimpan server dalam bentuk hash. Key yang dicabut langsung ditolak dengan 401 INVALID_API_KEY."
+    },
+    {
+      "id": "rate-limits",
+      "title": "Rate Limits",
+      "body": "Setiap akun punya limit request harian sesuai paket (reset 00:00 UTC). Sisa limit ada di header X-RateLimit-Remaining. Saat habis, server membalas 429 DAILY_LIMIT. Selain itu ada rate limit per IP (RATE_LIMIT_MAX per RATE_LIMIT_WINDOW_MS)."
+    },
+    {
+      "id": "errors",
+      "title": "Error Codes",
+      "body": "400 VALIDATION_ERROR: input tidak valid. 401 API_KEY_REQUIRED / INVALID_API_KEY. 404 NOT_FOUND. 409 NOT_CONFIGURED: tool belum dikonfigurasi. 429 RATE_LIMITED / DAILY_LIMIT. 503 MAINTENANCE: tool sedang maintenance. 500 INTERNAL_ERROR."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Bagaimana mendapatkan API key?",
+      "a": "Daftar atau login, buka Dashboard, lalu buat key baru. Key utuh hanya ditampilkan sekali, jadi salin dan simpan di tempat aman."
+    },
+    {
+      "q": "Apakah semua endpoint sudah berfungsi?",
+      "a": "Tidak. Endpoint berstatus Active benar-benar berjalan. Yang berstatus Not configured membutuhkan layanan eksternal yang belum disambungkan di server ini."
+    },
+    {
+      "q": "Apakah isi request saya disimpan?",
+      "a": "Tidak. Request log hanya menyimpan method, route, status, durasi, waktu, dan awalan key. Isi body, header, query, dan IP tidak dicatat."
+    },
+    {
+      "q": "Bagaimana cara upgrade paket?",
+      "a": "Buka Buy Plan. Harga dan pembayaran diatur pemilik situs; setelah pembayaran, admin mengaktifkan paket di akun kamu."
+    }
+  ],
+  "changelog": [
+    {
+      "version": "2.0.0",
+      "date": "2026-10-10",
+      "items": [
+        "SakuraApis: fokus ke manajemen API key",
+        "Login/register, dashboard, request log, leaderboard, feedback",
+        "Endpoint tools kini lewat /api/v1 dengan header X-API-Key dan limit harian per paket"
+      ]
+    },
+    {
+      "version": "1.1.0",
+      "date": "2026-10-10",
+      "items": [
+        "Halaman Pricing, Changelog, dan Status",
+        "Endpoint /api/stats, /api/openapi.json, /api/changelog, /api/plans"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "date": "2026-10-10",
+      "items": [
+        "Rilis awal: 9 tools aktif, REST API, dokumentasi"
+      ]
+    }
+  ],
+  "plans": [
+    {
+      "id": "free",
+      "name": "Free",
+      "price": "Gratis",
+      "period": "",
+      "dailyLimit": null,
+      "maxKeys": 3,
+      "features": [
+        "Limit request harian sesuai FREE_DAILY_LIMIT (UTC)",
+        "Hingga 3 API key aktif",
+        "Dashboard, request log, dan statistik pemakaian"
+      ]
+    },
+    {
+      "id": "premium",
+      "name": "Premium",
+      "price": "",
+      "period": "",
+      "dailyLimit": 10000,
+      "maxKeys": 20,
+      "highlighted": true,
+      "features": [
+        "Limit request harian 10.000 (UTC)",
+        "Hingga 20 API key aktif",
+        "Dashboard, request log, dan statistik pemakaian"
+      ]
+    }
+  ]
+}
